@@ -1,4 +1,4 @@
-class LinkStack:
+class LinkedStack:
     # ------------定义一个节点类---------------
     class Node:
         __slots__ = 'element', 'next'  # 该变量限定成员变量的定义
