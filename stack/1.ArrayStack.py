@@ -15,27 +15,28 @@
 class ArrayStack:
    def __init__(self):
         self.data = []
-    def __len__(self):
+   def __len__(self):
         return len(self.data)
-    def is_empty(self):
+   def is_empty(self):
         return len(self.data) == 0
-    def top(self):
-        if self.is_empty():
-            raise Empty("Stack is empty")
-        return self.data[-1]
-    def push(self, element):
-        self.data.append(element)
-    def pop(self):
-        if self.is_empty():
-            raise Empty("Stack is empty")
-        return self.data.pop()
+   def top(self):
+       if self.is_empty():
+           print("Stack is empty")
+       return self.data[-1]
+   def push(self, element):
+       self.data.append(element)
+   def pop(self):
+       if self.is_empty():
+           raise Empty("Stack is empty")
+       return self.data.pop()
 
 if __name__ == "__main__":
     S = ArrayStack()
-    S.push(5)            # [5]
-    S.push(3)            # [5, 3]
-    print(len(S))        # 2
-    print(S.pop())       # 3
-    print(S.is_empty())  # False
-    S.push(7)            # [5, 7]
-    print(S.top())       # 7
+    S.top()
+   # S.push(5)            # [5]
+   # S.push(3)            # [5, 3]
+   # print(len(S))        # 2
+   # print(S.pop())       # 3
+   # print(S.is_empty())  # False
+   # S.push(7)            # [5, 7]
+   # print(S.top())       # 7
