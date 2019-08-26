@@ -28,6 +28,9 @@ Status InitList_Sq(SqList *L){ // 结构体指针作为形参，c不支持引用
     L->listsize = LIST_INIT_SIZE  // 初始存储容量
 }// InitList_Sq
 
+Status ListLength_Sq(SqList *L){
+    return L->length;
+}
 Status ListInsert_Sq(SqList *L, int i, ElemType e){
     // 在第i个位置插入元素e
     if(i<1 || i>L->length+1) return ERROR;  // 插入位置不合法
@@ -57,3 +60,11 @@ Status ListDelete_Sq(SqList *L, int i){
         *(p-1) = *p;
     L->length -= 1;  // 列表实际存储减1
 }// ListDelete_Sq
+
+Status ListLocate_Sq(SqList *L, int i){
+    // 返回第i个元素
+    if(i<1 || i>L->length) return ERROR;  // 查找位置不合法
+    ElemType e;
+    e = L->elem[i-1];
+    return e;
+}
